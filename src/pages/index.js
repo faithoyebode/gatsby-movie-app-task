@@ -5,7 +5,7 @@ const Index = (props) => {
 
     return (
         <Chakra.Box>
-            Index Page
+            Index Page Now Wednesday
         </Chakra.Box>
     );
 }
