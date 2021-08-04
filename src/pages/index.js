@@ -1,12 +1,17 @@
 import React from 'react';
-import * as Chakra from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react'
+import Layout from '../layouts';
+import Hero from '../components/Hero';
+
 
 const Index = (props) => {
 
     return (
-        <Chakra.Box>
-            Index Page Now Wednesday
-        </Chakra.Box>
+        <Box w="100%">
+            <Layout>
+                <Hero />
+            </Layout>
+        </Box>
     );
 }
 

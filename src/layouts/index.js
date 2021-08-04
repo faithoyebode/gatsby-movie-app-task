@@ -1,16 +1,22 @@
 import React from 'react'
-import * as Chakra from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import PageTransition from "../components/page-transition";
+import TopBar from "../components/TopBar";
+import './layout.css';
+
 
 export default function ({ children }) {
 
 
   return (
     <>
-      <Chakra.Flex minH="100vh" flexDirection="column">
+      <Box>
           {/* layout goes here - things like headings etc */}
-        <PageTransition>{children}</PageTransition>
-      </Chakra.Flex>
+        <TopBar />
+        <PageTransition>
+          {children}
+        </PageTransition>
+      </Box>
     </>
   )
 }

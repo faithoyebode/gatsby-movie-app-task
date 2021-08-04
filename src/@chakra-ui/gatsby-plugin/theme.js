@@ -11,10 +11,6 @@ const breakpoints = createBreakpoints({
 });
 
 const theme = extendTheme({
-    fonts: {
-        heading: 'Inter',
-        body: 'Inter'
-    },
     breakpoints
 });
 
