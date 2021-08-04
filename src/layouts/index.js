@@ -14,7 +14,7 @@ export default function ({ children }) {
           {/* layout goes here - things like headings etc */}
         <TopBar />
         <PageTransition>
-          {children}
+          {children} 
         </PageTransition>
       </Box>
     </>
