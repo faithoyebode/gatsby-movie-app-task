@@ -22,14 +22,19 @@ body{
 }
   
 .hero{
-    background-image: url('../assets/images/hero-lg.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 100%;
     height: 550px;
     color: #ffffff;
-    display: flex;
-    align-items: center;
+    display: grid;
+}
+
+.hero .hero-bg{
+    width: 100%;
+    min-height: 550px;
+}
+
+.hero .text-container{
+    margin-top: 109px;
 }
   
 .hero h3{
@@ -39,6 +44,7 @@ body{
     width: 490px;
     height: 282px;
     font-weight: 700;
+    line-height: 93.74px;
 }
   
 .loader {
@@ -80,9 +86,9 @@ div.movie-box:hover::after{
 }
   
 @media all and (max-width: 920px){
-    .hero{
-      background-image: url('../assets/images/hero-md.jpg');
-      justify-content: center;
+    .hero div{
+        display: flex;
+        justify-content: center;
     }
     .hero h3{
       margin-left: 0;
@@ -94,9 +100,18 @@ div.movie-box:hover::after{
   
 @media all and (max-width: 425px){
     .hero{
-      background-image: url('../assets/images/hero-sm.jpg');
       height: 257px;
+      align-items: center;
     }
+
+    .hero .hero-bg{
+        min-height: 257px;
+    }
+
+    .hero .text-container{
+        margin-top: 0;
+    }
+
     .hero h3{
       font-size: 28px;
       width: 273px;
