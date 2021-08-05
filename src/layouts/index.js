@@ -5,10 +5,10 @@ import TopBar from "../components/TopBar";
 import './layout.css';
 
 
-export default function ({ children }) {
+export default function Layout ({ children }) {
 
 
-  return (
+  return ( 
     <>
       <Box>
           {/* layout goes here - things like headings etc */}
