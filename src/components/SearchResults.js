@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect} from 'react';
 import { Box, Input, FormControl, FormLabel, Image, Text, Flex} from '@chakra-ui/react';
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const SearchResults = () => {
 
@@ -94,10 +93,10 @@ const SearchResults = () => {
                 setLoadingMovies(true);
                 setLoadingSeries(true);
                 const [ moviesResults, seriesResults ] = await Promise.all([
-                        fetch(`https://omdbapi.com/?apikey=${process.env.REACT_APP_KEY}&s=game&type=movie&page=1`, {
+                        fetch(`https://omdbapi.com/?apikey=${process.env.GATSBY_API_KEY}&s=game&type=movie&page=1`, {
                             signal: firstController.signal
                         }),
-                        fetch(`https://omdbapi.com/?apikey=${process.env.REACT_APP_KEY}&s=game&type=series&page=1`, {
+                        fetch(`https://omdbapi.com/?apikey=${process.env.GATSBY_API_KEY}&s=game&type=series&page=1`, {
                             signal: secondController.signal
                         }),
                 ]);
@@ -147,7 +146,7 @@ const SearchResults = () => {
                     {
                         movies?.Search?.map((item, i) => (
                             <Box key={i+1} h={{base: "200px", md: "300px"}} flexShrink="0" flexBasis={{base: "200px", md: "300px"}} mr="13px" position="relative" borderRadius="12px" className="movie-box">
-                                <GatsbyImage src={item.Poster} w="100%" h="100%" objectFit="cover" borderRadius="12px" />
+                                <Image src={item.Poster} w="100%" h="100%" objectFit="cover" borderRadius="12px" />
                                 <Text color="#ffffff" position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" zIndex="3" fontFamily="DM Sans" fontSize={{base: "18px", md: "24px"}} w="60%" textAlign="center">{item.Title}</Text>
                             </Box>
                         ))
@@ -170,7 +169,7 @@ const SearchResults = () => {
                     {
                         series?.Search?.map((item, i) => (
                             <Box key={i+1} h={{base: "200px", md: "300px"}} flexShrink="0" flexBasis={{base: "200px", md: "300px"}} mr="13px" position="relative" borderRadius="12px" className="movie-box">
-                                <GatsbyImage src={item.Poster} w="100%" h="100%" objectFit="cover" borderRadius="12px" />
+                                <Image src={item.Poster} w="100%" h="100%" objectFit="cover" borderRadius="12px" />
                                 <Text color="#ffffff" position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)" zIndex="3" fontFamily="DM Sans" fontSize={{base: "18px", md: "24px"}} w="60%" textAlign="center">{item.Title}</Text>
                             </Box>
                         ))
